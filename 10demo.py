@@ -50,10 +50,14 @@ while True:
 # c = a 
 # a = 
 
- def min4(a, b, c, d ):
+def min4(a, b, c, d ): 
     if a <= b and a <= c and a <= d: return a 
     if b <= c and b <= d: return b # stepwise, use less than for all
     if c <= d: return c 
     return d 
 
-print (min4(5, 3, -1, 0))   
+print (min4(5, 3, -1, 0)) 
+
+def pythagoras(a, b): 
+    return (a**2 + b**2)**0.5 
+print(pythagoras(3, 4))

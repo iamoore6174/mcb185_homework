@@ -61,3 +61,94 @@ print (min4(5, 3, -1, 0))
 def pythagoras(a, b): 
     return (a**2 + b**2)**0.5 
 print(pythagoras(3, 4))
+
+import math
+
+def circle_area(r): return (math.pi) * r ** 2
+def rectangle_area(w, h): return w * h 
+def triangle_area(w, h): return rectangle_area(w, h)/2
+
+# Compute the arithmetic mean of 3 numbers
+def arithmean(n1, n2, n3): 
+    return ((n1+n2+n3)/3)
+print(arithmean(1, 2, 3))
+
+# Convert temperature from F to C or vice-versa
+def ftoc(f): 
+    return ((f - 32)*5/9) 
+print(ftoc(32))
+
+def ctof(c):
+    return ((c* 9/5)+ 32)
+print(ctof(0))
+
+a = 2
+b = 2
+if a == b: 
+    print('a equals b')
+    print(a, b) # only prints if condition true
+print (a, b) # always prints 
+
+def is_even(x):
+    if x % 2 == 0: return True 
+    return False 
+print(is_even(2))
+print(is_even(3))
+
+c = a == b # a == b is boolean expression because it's true or false
+print(c) 
+print(type(c))
+
+a = 1
+b = 2
+if a < b: 
+    print('a < b')
+elif a > b: 
+    print('a > b')
+else: 
+    print('a == b') # use == unless assigning variable
+# in if-elif-else construct only the first true conditions is executed
+
+# floating point numbers have finite precision so this code gives a < b. Never test for equality b/w them.
+
+a = 0.3
+b = 0.1 * 3
+if a < b: print('a < b')
+elif a > b: print('a > b')
+else: print('a == b')
+
+# Instead examine their difference. They're close enough if the difference is less than some acceptable value.
+
+a = 0.3
+b = 0.1 * 3
+print(abs(a - b))
+if abs(a - b) < 1e-9: print('close enough')
+
+# Compare two values with math.isclose()
+
+a = 0.3
+b = 0.1 * 3
+if math.isclose(a, b): print('close enough')
+
+# strings are compared by ASCII values. Variables need to be the same type or there's type error 
+# ex: s1= 'A' s2 = 3
+
+s1 = 'A'
+s2 = 'B'
+s3 = 'a'
+if s1 < s2: print('A < B')
+if s2 < s3: print('A < a')
+
+# None type: if you call (print) a function without returning (running) it, you won't get a value.
+# ex: def silly(m, x, b): y = m * x + b
+# print(silly(2, 3 ,4)) ---> value= None
+
+
+def is_integer(x):
+    if x % 1 == 0: return True
+    return False
+print(is_integer(2))
+
+
+
+

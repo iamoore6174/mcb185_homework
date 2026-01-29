@@ -5,7 +5,7 @@ a = 0
 b = 1 # first two fib numbers 
 for i in range(10): # up to 10
     print(a) # print current fib number
-    a, b = b, a + b # switch variable values and add
+    a, b = b, a + b
 
  
 # for first 100

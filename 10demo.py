@@ -167,3 +167,35 @@ def maxnum(x, y, z):
     elif y > x and y > z: return y
     else: return z
 print(maxnum(1, 2, 3))
+
+# While loop: while (Boolean is True): do_something
+
+# while True: 
+    # print('hello')
+# ctrl c stops loop 
+# break= break loop at certain point
+
+i = 0 
+while True:
+    i = i + 1
+    print('hey', i) # gives hey 1, hey 2
+    if i == 3: break 
+
+i = 0 # i starts at 0, can start at 1, 2 etc
+while i < 3: # condition for when it's no longer True/ when to stop
+    i = i + 1 # go by 1, can do i + 2, skip by 2s
+    print('hey', i) 
+
+# for i in range (for loop) 
+
+for i in range(1, 10, 3): 
+    print(i)
+# range(initial value, end before, increment) but usually they increment by 1
+
+for i in range (0, 5): # same as for i in range(5) 
+    print(i)
+
+for i in range(7):
+    if i % 2 == 0: print(i, 'is even')
+    else: print(i, 'is odd')
+

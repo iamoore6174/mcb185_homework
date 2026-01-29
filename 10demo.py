@@ -149,6 +149,21 @@ def is_integer(x):
     return False
 print(is_integer(2))
 
+# Write a function that returns the complement of a DNA letter, returning None if the letter isn't DNA.
 
+def dnacomp(x):
+    if x == 'A': return 'T'
+    elif x == 'T': return 'A'
+    elif x == 'C': return 'G'
+    elif x == 'G': return 'C'
+    else: return None
+print(dnacomp('A'))
 
+# Write a function that returns the maximum of 3 numbers. 
+# To be clear, the function takes 3 input parameters and returns the single largest one.
 
+def maxnum(x, y, z):
+    if x > y and x > z: return x 
+    elif y > x and y > z: return y
+    else: return z
+print(maxnum(1, 2, 3))

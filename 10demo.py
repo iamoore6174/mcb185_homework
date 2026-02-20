@@ -54,7 +54,7 @@ def min4(a, b, c, d ):
     if a <= b and a <= c and a <= d: return a 
     if b <= c and b <= d: return b # stepwise, use less than for all
     if c <= d: return c 
-    return d 
+    return d #no else: b/c outside function
 
 print (min4(5, 3, -1, 0)) 
 
@@ -199,3 +199,192 @@ for i in range(7):
     if i % 2 == 0: print(i, 'is even')
     else: print(i, 'is odd')
 
+# triangular number = sum of numbers from 1 to n
+
+def triangular(n):
+    tri = 0 # variable to hold sum, start at 0
+    for i in range (n + 1):
+        tri = tri + i
+    return tri 
+print(triangular(10))
+
+# Write a function that calculates the factorial of a number.
+
+def factorial(n):
+    if n <= 0: return None # doesn't work if negative
+    fact = 1 #variable holds function, start at 1
+    for i in range(1, n + 1): 
+        fact = fact * i 
+    return fact 
+print(factorial(2))
+
+# Write a function to determine if a number is prime.
+
+def is_prime(n):
+    if n <= 1: return False
+    for i in range (2, n): 
+        if n % i == 0: return False 
+    return True 
+print(is_prime(4433))
+
+def pythagoras (a, b):
+    return (a ** 2 + b ** 2) ** 0.5
+print(pythagoras(2, 3))
+
+# Write a program ascii.py that prints out the ASCII decimal 
+# values for A and a separated by a comma.
+
+print(ord('A'), ord('a'), sep=',') # ord = print ASCII of letter
+
+# Write a function is_prob(x) that determines (returns Boolean) 
+# if a number is a valid probability (x >= 0 and x <= 1).
+
+def is_prob(x):
+    if x < 0 or x > 1: return False
+    else: return True 
+print(is_prob(1))
+
+def is_int(x):
+    if x % 1 == 0: return True 
+    else: return False
+print(is_int(2.1))
+
+def mph_to_kph(x):
+    return (x/0.62137)
+print(mph_to_kph(24))
+
+# Euler
+import math 
+
+n = 0 
+e_estimate = 0
+previous = -1
+
+def distance(x1, y1, x2, y2):
+    return ((x2- x1)**2 + (y2- y1)**2)**0.5
+print(distance(0, 0, 3, 4))
+
+# ascii.py
+print(ord('A'), ord('a'), sep= ',')
+
+# += means add to existing value x += 1: x = x + 1
+
+# Write a program that finds all Pythagorean triples for triangles with 
+# sides a and b less than 100. For example, 3, 4, 5 is a triple: 3^2 + 4^2 = 5^2. 
+# Hint: all sides, including the hypotenuse, must be integers. 
+# A good way to test for an integer is like: if c % 1 == 0.
+
+for a in range (1, 100):
+    for b in range (a, 100): # start at a avoid repeats
+        c= (a**2 + b**2)**0.5 
+        if c % 1 == 0: # if c is an integer, print the triple as an integer 0
+            print(a, b, int(c))
+
+s1 = 'hello'
+s2 = 'world'
+s3 = s1 + s2 
+print(len(s3))
+print(s3.count('o'), s3.count('l'))
+
+s4 = s3.replace('o', 'i')
+print(s4)
+
+# s = 'blah blah'
+# print(s[3]): h, start at zero
+
+# s = 'blah blah'
+# for c in s: 
+#   print(c)
+
+# s = 'blah blah'
+# pos = 0
+# for c in s:
+#   if c == 'i': print('found i at pos', pos)
+# pos += 1
+
+# s = 'blah blah'
+# for i in range(len(s)):
+#   print(i, s[i])
+
+#s = 'ABCDEF'
+#.    012345
+# print(s[0:4]) slice function , same as print(s[:4])
+
+# for i in range (0, 4, 2):
+#   print(i, s[i])
+#print('first 4', s[:4])
+#print('last 4', s[-4:]) before : beginning, after : end
+# print(s[::-1]) reverses sequence
+
+seq = 'CAGAGGATATATTCAGAGT'
+print(seq)
+for i in range(0, len(seq), 3):
+    print(i, seq[i:i+3])
+
+circle = (20, 50, 5)
+print(circle[0]) # gives 2
+
+# tuple:
+basket = ('a', 50, 'cat', 3.14)
+print(basket[::-1])
+print(basket[0]) # a
+print(basket[0:1]) # slice of unit that gives ('a',), slice of the basket
+
+#lists
+animals = ('cat', 'dog,', 'cow')
+animals2 = list(animals) # gives in []
+print(animals)
+print(animals2)
+basket = []
+basket.append('apple')
+basket.append('pear')
+basket.append('peach')
+basket.append('blueberry')
+basket.sort() # sort alphabetical
+basket.sort(reverse=True) #reverse order
+print(basket)
+
+seq = 'GATCACGAT' # can't sort string on own 
+seq_list = list(seq) # turn into list
+seq_list[3] = 'a' # replace C with a
+seq_list.sort() # sort alphabetical
+s = '-'.join(seq_list)
+
+print(seq)
+print(seq_list)
+print(s)
+
+a= ['cat', 'dog', 'rat']
+b = a.copy() # copy of a 
+b[0] = 'cow' # change to cow
+print(b)
+print(a)
+
+# or can do a =[cat, cow]
+# b=[] for animal in a: b.append(animal)
+
+#split(): turn string to list
+s = '3.14, 2.71, 1.51'
+data = s.split(',') #split with commas
+print(data)
+pi = float(data[0]) #make floating point number
+e = float(data[1])
+v = pi + e #added 2 strings so doesn't add numbers correctly unless u float()
+print(v)
+
+s = 'ACGATAGATCGAG'
+if 'AC' in s: print('yes, found AC')
+
+# index- find position
+s = 'ACGATAGATCGAG'
+if 'A' in s: print('yes, found A')
+if 'Y' in s:
+    x = s.find('Y') # s.find() s.index() both fibnd position 
+    print('Y found at position',x)
+x = s.index('A')
+print('A found at position', x)
+
+animals = ['cat', 'dog', 'cow', 'pig']
+if 'cow' in animals:
+    x = animals.index('cow')
+    print(x)

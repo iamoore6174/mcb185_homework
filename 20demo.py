@@ -1,3 +1,5 @@
+print('correct file')
+
 s1 = 'meow'
 s2 = 'meowoeew'
 print(s1, s2)
@@ -131,3 +133,104 @@ def entropy(vaomatua):
         H -= P * math.log2(P)
     return H 
 print(entropy([0.2, 0.3, 0.5]))
+
+# Write a function manhattan(X1, X2) that computes the Manhattan distance between two lists of numbers.
+
+def manhattan(X1, X2):
+    distance = 0
+    for x1, x2 in zip(X1, X2):
+            distance += abs(x1 - x2)
+    return distance
+
+a = [0.25, 0.25, 0.25, 0.25]
+b = [0.4, 0.3, 0.2, 0.1]
+
+print(manhattan(a, b))
+
+# Write a function dkl(P, Q) that computes the Kullback-Leibler distance between two histograms. 
+# You should check that P and Q are actually histograms and you should do something about values of zero.
+
+import math
+import sys
+
+def dkl(P, Q):
+    if not math.isclose(1.0, sum(P)): sys.exit('error') # error if doesn't sum to 1 bc it's probability
+    distance = 0
+    for p, q in zip(P, Q):
+        if p == 0: continue # skip zero
+        if q == 0: continue
+        distance = p * math.log2(p/q)
+    return distance
+
+
+a =[0.25, 0.25, 0.25, 0.25]
+b =[0.25, 0.25, 0.25, 0.25]
+print(dkl(a,b))
+
+def pairwise_percent(s1, s2):
+    diff = 0 # start at no differences
+    for c1, c2 in zip(s1, s2):
+        if c1 != c2: diff += 1 # if difference, add 1 to diff
+    return 1- diff/len(s1)
+
+s1 = 'ACGATATACAGTA'
+s2 = 'ACGATAGACAGTA'
+
+print(pairwise_percent(s1, s2))
+
+def get_list_from_file(filename):
+    strings =[]
+    with open(filename) as fp:
+        for line in fp:
+            strings.append(line.strings())
+    return strings
+
+import sys
+
+# def jaccard(f1, f2):
+   # X1 = get_list_from_file(f1)
+  #  X2 = get_list_from_file(f2)
+    #unique_a = []
+    #unique_b = []
+    #shared = []
+    #for x1 in X1:
+  #      if x1 in X2: shared.append(x1)
+  #      else: unique_a.append(x1)
+  #  for x2 in X2:
+   #     if x2 not in X1: unique_b.append(x2)
+  #  print(unique_a)
+  #  print(unique_b)
+  #  print(shared)
+    # return len(shared)/ len(shared) + len(unique_a) + len(unique_b)
+
+# file1 = sys.argv[1]
+# file2 = sys.argv[2]
+
+# print(jaccard(file1, file2))
+
+import sys
+
+filename = sys.argv[1]
+target_r = int(sys.argv[2])
+target_g = int(sys.argv[3])
+target_b = int(sys.argv[4])
+
+with open(filename) as fp:
+    for line in fp:
+        colorname, hexvalue, rgbs = line.split()
+        r, g, b = rgsb.split(',')
+        distance = 0
+        distance += abs(target_r - int(r))
+        distance += abs(target_g - int(g))
+        distance += abs(target_b - int(b))
+       
+# Write a function hydropathy(pro) that computes the average Kyte-Doolitle hydrophobicity
+# of a protein sequence. Use the variables as defined below.
+
+def kdh(seq):
+    aas = 'ACDEFGHIKLMNPQRSTVWY'
+    kdh = (1.8, 2.5, -3.5, -3.5, 2.8, -0.4, -3.2, 4.5, -3.9, 3.8, 1.9, -3.5, -1.6,
+	-3.5, -4.5, -0.8, -0.7, 4.2, -0.9, -1.3)
+    for aa in seq:
+        print(aa)
+    return -0.1

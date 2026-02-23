@@ -92,8 +92,8 @@ import random
 import sys
 import math 
 
-def random_dna(n, X=[0.25, 0.25, 0.25, 0.25]):
-    if not math.isclose(1.0, sum(X)): sys.exit('oops')
+def random_dna(n, X=[0.25, 0.25, 0.25, 0.25]): # default probability distribution
+    if not math.isclose(1.0, sum(X)): sys.exit('oops') # if X doesn't add to 1
     a = X[0]
     c = X[0] + X[1]
     g = X[0] + X[1] + X[2]

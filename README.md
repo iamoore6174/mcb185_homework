@@ -1,2 +1,2 @@
 # mcb185_homework
-l
+Homework for Programming for Biologists course
